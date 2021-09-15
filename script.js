@@ -17,9 +17,6 @@ btnNext.addEventListener("click", () => {
   const nextSlide = currentSlide.nextElementSibling;
   const moveWidth = nextSlide.style.left;
 
-  console.log(slidesContainer.style.left);
-  console.log("slide: ", nextSlide.style.left);
-
   slidesContainer.style.transform = `translateX(-${moveWidth})`;
 
   currentSlide.classList.remove("current-slide");
@@ -31,8 +28,6 @@ btnPrev.addEventListener("click", () => {
   const prevSlide = currentSlide.previousElementSibling;
   const moveWidth = prevSlide.style.left;
 
-  console.log(slidesContainer.style.left);
-  console.log("slide: ", prevSlide.style.left);
   slidesContainer.style.transform = `translateX(-${moveWidth})`;
 
   currentSlide.classList.remove("current-slide");

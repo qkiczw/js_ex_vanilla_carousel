@@ -13,6 +13,7 @@
 .carousel__slides-container {
   position: relative;
   height: 100%;
+  overflow: hidden;
   background-color: lightcoral; /* just for the test */
 }
 .carousel__slides {

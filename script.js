@@ -12,13 +12,15 @@ const setSlidesLeftPos = (slide, index) =>
 
 slides.forEach(setSlidesLeftPos);
 
-btnNext.addEventListener("click", () => {
+btnNext.addEventListener("click", (e) => {
   const currentSlide = slidesContainer.querySelector(".current-slide");
+  const nextSlide = currentSlide.nextElementSibling;
+  const moveWidth = nextSlide.style.left;
 
-  currentSlide.nextElementSibling.style.left = 0;
+  slidesContainer.style.transform = `translateX(-${moveWidth})`;
 
   currentSlide.classList.remove("current-slide");
-  currentSlide.nextElementSibling.classList.add("current-slide");
+  nextSlide.classList.add("current-slide");
 });
 
 // Future adds:

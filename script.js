@@ -47,15 +47,19 @@ carouselDots.forEach((dot) => {
     const clickedDot = e.target;
     const clickedDotIndex = carouselDots.indexOf(clickedDot);
     const moveWidth = slides[clickedDotIndex].style.left;
+    const currentSlide = document.querySelector(".current-slide");
+    const currentDot = document.querySelector(".current-indicator");
 
     console.log(slides[clickedDotIndex].style.left);
     slidesContainer.style.transform = `translateX(-${moveWidth})`;
 
-    const currentSlide = document.querySelector(".current-slide");
-    const currentDot = document.querySelector(".current-indicator");
+    currentSlide.classList.remove("current-slide");
+    slides[clickedDotIndex].classList.add("current-slide");
 
-    // change slide to clicked dot
+    currentDot.classList.remove("current-indicator");
+    clickedDot.classList.add("current-indicator");
   });
 });
+
 // Future adds:
 // - add dots base on amount of slides

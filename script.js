@@ -3,7 +3,7 @@ const slidesContainer = document.querySelector(".carousel__slides");
 const slides = Array.from(slidesContainer.children);
 const carouselNav = document.querySelector(".carousel__nav");
 const singleSlideWidth = slides[0].getBoundingClientRect().width;
-const carouselDots = carouselNav.children;
+const carouselDots = [...carouselNav.children];
 const btnNext = document.querySelector(".carousel__button--right");
 const btnPrev = document.querySelector(".carousel__button--left");
 
@@ -42,5 +42,20 @@ btnPrev.addEventListener("click", () => {
   prevSlide.classList.add("current-slide");
 });
 
+carouselDots.forEach((dot) => {
+  dot.addEventListener("click", (e) => {
+    const clickedDot = e.target;
+    const clickedDotIndex = carouselDots.indexOf(clickedDot);
+    const moveWidth = slides[clickedDotIndex].style.left;
+
+    console.log(slides[clickedDotIndex].style.left);
+    slidesContainer.style.transform = `translateX(-${moveWidth})`;
+
+    const currentSlide = document.querySelector(".current-slide");
+    const currentDot = document.querySelector(".current-indicator");
+
+    // change slide to clicked dot
+  });
+});
 // Future adds:
 // - add dots base on amount of slides

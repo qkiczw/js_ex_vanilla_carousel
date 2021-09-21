@@ -65,6 +65,6 @@
   background: rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
-.carousel__indicator.current-slide {
+.carousel__indicator.current-indicator {
   background: rgba(0, 0, 0, 0.75);
 }

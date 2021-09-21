@@ -12,10 +12,14 @@ const setSlidesLeftPos = (slide, index) =>
 
 slides.forEach(setSlidesLeftPos);
 
-btnNext.addEventListener("click", () => {
+btnNext.addEventListener("click", (e) => {
   const currentSlide = slidesContainer.querySelector(".current-slide");
   const nextSlide = currentSlide.nextElementSibling;
   const moveWidth = nextSlide.style.left;
+  const currentDot = document.querySelector(".current-indicator");
+
+  currentDot.classList.remove("current-indicator");
+  currentDot.nextElementSibling.classList.add("current-indicator");
 
   slidesContainer.style.transform = `translateX(-${moveWidth})`;
 
@@ -27,6 +31,10 @@ btnPrev.addEventListener("click", () => {
   const currentSlide = slidesContainer.querySelector(".current-slide");
   const prevSlide = currentSlide.previousElementSibling;
   const moveWidth = prevSlide.style.left;
+  const currentDot = document.querySelector(".current-indicator");
+
+  currentDot.classList.remove("current-indicator");
+  currentDot.previousElementSibling.classList.add("current-indicator");
 
   slidesContainer.style.transform = `translateX(-${moveWidth})`;
 
